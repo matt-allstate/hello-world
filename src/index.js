@@ -32,22 +32,22 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 
 //VERSION 3
 
-const myName = "Matt";
+// const myName = "Matt";
 
-const mainDiv = <div id="main" className="firstDiv">
-  <p>This is the first paragraph. Hello {myName}</p>
-  <p>This is the second paragraph</p>
-  <ul>
-    <li>First item</li>
-    <li>Second item</li>
-    <li>Third item</li>
-  </ul>
-  <label htmlFor="firstName" >First name</label>
-  <input id="firstName" type="text" required="true" />
-  <p>The total of 7 + 9 is {7 + 9}</p>
-</div>
+// const mainDiv = <div id="main" className="firstDiv">
+//   <p>This is the first paragraph. Hello {myName}</p>
+//   <p>This is the second paragraph</p>
+//   <ul>
+//     <li>First item</li>
+//     <li>Second item</li>
+//     <li>Third item</li>
+//   </ul>
+//   <label htmlFor="firstName" >First name</label>
+//   <input id="firstName" type="text" required="true" />
+//   <p>The total of 7 + 9 is {7 + 9}</p>
+// </div>
 
-root.render(mainDiv);
+// root.render(mainDiv);
 
 /*
 <ul>
@@ -57,11 +57,11 @@ root.render(mainDiv);
 </ul>
 */
 
-// root.render(
-//   <React.StrictMode>
-//     <App />
-//   </React.StrictMode>
-// );
+root.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
