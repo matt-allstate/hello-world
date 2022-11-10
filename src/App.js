@@ -3,11 +3,12 @@ import Greeting from './components/Greeting/Greeting';
 
 function App() {
   return (
-    <div className="App">
+    <div>
       <p>The greeting is </p>
-      <Greeting />
+      <Greeting name="Matt" age="21" />
     </div>
   );
 }
 
 export default App;
+
