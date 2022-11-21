@@ -1,6 +1,9 @@
 const Song = (props) => {
+
+//const song1 = {title : "Last thing on my mind", artist: "Steps"};
+
 return (
-   <li>{props.title} by {props.artist}</li> 
+   <li>{props.song.title} by {props.song.artist}</li> 
 )
 }
 
