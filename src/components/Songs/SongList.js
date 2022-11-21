@@ -32,19 +32,19 @@ const SongList = () => {
  
     const addVote = (index) => {
         console.log("voting for " + index)
-        const newSongs = songs;
-        const songBeingChanged = newSongs[index];
-        newSongs[index] = {...songBeingChanged, votes: songBeingChanged.votes + 1}
-        setSongs([...newSongs]);
+        const newSongs = [...songs];
+        newSongs[index].votes += 1;
+        setSongs(newSongs);
     }
 
     return (
         <div>
             <h1>Your favourite songs are:</h1>
             <button onClick={toggleVisibility}>{visible ? "Hide" : "Show"} songs</button>
-            <ul className={visible ? "songs-display" : "songs-hidden"}>
-                {songs.map ( (song, index) => <Song song={song} key={index} vote={() => addVote(index) } />) }
-            </ul>
+            {visible && <ul>
+                 {songs.map ( (song, index) => <Song song={song} key={index} vote={() => addVote(index) } />) }
+               </ul>
+            }
 
         </div>
     );
