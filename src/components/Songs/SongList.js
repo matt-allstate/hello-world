@@ -20,8 +20,6 @@ const SongList = () => {
 
     const [songs, setSongs] = useState(initialSongs);
 
-    const addVote = () => {}
-
     //VERSION 1 - LONG HAND OLD STYLE JAVASCRIPT
     // const displaySongs = [];
     // for(const [index, value] of songs.entries()) {
@@ -32,12 +30,20 @@ const SongList = () => {
     //VERSION 2 - MODERN JAVASCRIPT
     //const displaySongs = songs.map ( (value, index) => <Song key={index} song={value} vote={addVote} />)
  
+    const addVote = (index) => {
+        console.log("voting for " + index)
+        const newSongs = songs;
+        const songBeingChanged = newSongs[index];
+        newSongs[index] = {...songBeingChanged, votes: songBeingChanged.votes + 1}
+        setSongs([...newSongs]);
+    }
+
     return (
         <div>
             <h1>Your favourite songs are:</h1>
             <button onClick={toggleVisibility}>{visible ? "Hide" : "Show"} songs</button>
             <ul className={visible ? "songs-display" : "songs-hidden"}>
-                {songs.map ( (song, index) => <Song song={song} key={index} vote={addVote} />) }
+                {songs.map ( (song, index) => <Song song={song} key={index} vote={() => addVote(index) } />) }
             </ul>
 
         </div>
